@@ -71,7 +71,7 @@ Red Hat Enterprise Linux release 8.7 (Ootpa)
 4. Install some additional tools to help after reboot
 
 ```console
-[root@xxx-h01-000-r650 ~]# dnf install tmux git python3-pip sshpass -y
+[root@xxx-h01-000-r650 ~]# dnf install tmux git python3-pip sshpass nano wget -y
 Updating Subscription Management repositories.
 ...
 Complete!
@@ -210,6 +210,13 @@ controlplane_lab_interface: eno12399np0
 ### Extra vars
 
 No extra vars are needed for an ipv4 bare metal cluster.
+
+The default cluster address will be `bm.example.com`. If you want it to be other than default, use these variables:
+```yaml
+base_dns_name: scale-cloud.com
+cluster_name: cloud-99
+```
+This will set cluster address to `cloud-99.scale-cloud.comme vriables`
 
 ### Disconnected and ipv6 vars
 
